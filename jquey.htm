@@ -1,0 +1,185 @@
+<!DOCUMENT html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		#s_title {
+			padding:0;
+			margin:auto;
+			width:155px;
+		}
+		#switcher h3:hover {
+			cursor:pointer;
+			background-color:#faa;
+		}
+		#switcher h3 {
+			padding:0;
+			margin:0;
+			width:158px;
+			height:20px;
+			overflow:visible;
+			white-space:nowrap;
+		}
+		#switcher h3:hover {
+			background-color:#666;
+		}
+		
+		#head_left {
+			float:left;
+		}
+		#head_right {
+			float:right;
+			background-color:#678;
+			height:100%;
+			width:70px;
+		}
+		#head_right_c {
+			height:67px;
+			width:67px;
+			border-left:3px solid;
+			border-bottom:3px solid;
+			text-indent:-999999;
+		}
+		.share-limit {
+			width:400px;
+			border:solid 3px;
+			height:auto;
+			float:left;
+		}
+		.switcher {
+			float:left;
+			border-bottom:none;
+			display:block;
+			background-color:#eee;
+			height:70px;
+		}
+		#switcher-default {
+			
+		}
+		#switcher-narrow {
+			
+		}
+		#switcher-larger {
+			
+		}
+		#container {
+			border-top:none;
+		}
+		#content {
+			margin:20px;
+			margin-top:0px;
+			border:solid 1px #000;
+			border:10px;
+			white-space:pre-wrap;
+			text-indent:2em;
+			line-height:1.8em;
+			float:left;
+			position:relative;
+		}
+		.btn-ul {
+			list-style:none;
+			text-align:center;
+			overflow:hidden;
+			white-space:nowrap;
+		}
+		.btn-ul li {
+			list-style:none;
+			float:left;
+			display:inline;
+			padding:0;
+			margin:0;
+		}
+		#container.larger, .charpter {
+			font-size:1.5em;
+		}
+		#container.narrow, .chapter {
+			font-size:0.5em;
+		}
+		.selected {
+			font-weight:bold;
+			color:#fff;
+			background-color:#888;
+		}
+		li button {
+			cursor: pointer;
+			border: 1px solid #ccc;
+		}
+		button:hover {
+			background-color:#999;
+		}
+		.hidden {
+			display:none;
+		}
+		.hover_title_right {
+			background-color:#fff;
+		}
+	</style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(
+			function() {
+				$('#switcher-default').addClass('selected');
+				$('#switcher button').bind('click', function(event) {
+					$('#switcher button').removeClass('selected');
+					$(this).addClass('selected');
+					$('#container').removeClass().addClass('share-limit').addClass(this.id.split('-')[1]);
+					event.stopPropagation();
+				});
+				$('#switcher h3').click(function(){
+					$('#switcher ul').toggleClass('hidden');
+				});
+				$('#head_right_c').hover(function() {
+					$(this).addClass('hover_title_right');
+				}, function() {
+					$(this).removeClass('hover_title_right');
+				});
+			}
+		);
+	</script>
+</head>
+<body>
+	
+	<div style="width:400px">
+		<div id="switcher" class="switcher share-limit">
+			<div id="head_left">
+				<div id="s_title">
+					<h3>Style Switcher</h3>
+				</div>
+				<ul class="btn-ul">
+					<li><button id="switcher-default">Default</button></li>
+					<li><button id="switcher-narrow">Narrow Column</button></li>
+					<li><button id="switcher-larger">Larger Print</button></li>
+				</ul>
+			</div>
+			<div id="head_right">
+				<div id="head_right_c">
+				1
+				</div>
+			</div>
+		</div>
+		<div id="container" class="share-limit">
+			<p id="content">
+  jQuery is a new kind of JavaScript Library.
+  jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript. Lightweight FootprintCSS3 Compliant
+			</p>
+		</div>
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
